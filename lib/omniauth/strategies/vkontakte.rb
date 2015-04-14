@@ -24,8 +24,7 @@ module OmniAuth
       option :client_options, {
         :site          => 'https://api.vk.com/',
         :token_url     => 'https://oauth.vk.com/access_token',
-        :authorize_url => 'https://oauth.vk.com/authorize',
-        :redirect_uri  => 'https://oauth.vk.com/blank.html'
+        :authorize_url => 'https://oauth.vk.com/authorize'
       }
 
       option :authorize_options, [:scope, :display]
@@ -52,6 +51,10 @@ module OmniAuth
         {
           'raw_info' => raw_info
         }
+      end
+
+      def callback_url
+        'https://oauth.vk.com/blank.html'
       end
 
       def raw_info
